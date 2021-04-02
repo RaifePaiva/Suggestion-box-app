@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -30,7 +31,7 @@ public class SuggestionController {
 
 
 	@GetMapping("/")
-	public ModelAndView listSuggestion(@PageableDefault(size = 5) Pageable pg) {
+	public ModelAndView listSuggestion(@PageableDefault(size = 5, sort = {"created"}, direction = Direction.DESC ) Pageable pg) {
 
 		ModelAndView view = new ModelAndView("suggestion/list");
 		Page<Suggestion> suggestions = suggestionRepository.findAll(pg);
