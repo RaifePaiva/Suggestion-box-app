@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_71abb1de07364c0?reconnect=true
-    username: b3715103b15e52
-    password: e752f112
+    url: #
+    username: #
+    password: #
 
   jpa:
     hibernate:
